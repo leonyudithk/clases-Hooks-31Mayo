@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import useForm from './Hooks/useForm';
 
@@ -17,6 +17,14 @@ const Formularios = () => {
         reset()
 
     }
+
+    useEffect(() => {
+        console.log('Montaje del Estado')
+        return()=>{
+            console.log('Desmontar el estado')
+        }
+    }, [datosForm])
+
     return (
         <div>
         <h1>Formulario de Hooks</h1>
